@@ -1,1 +1,155 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <iomanip>
+#include <random>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::vector;
+using std::string;
+using std::setw;
+using std::left;
+using std::fixed;
+using std::setprecision;
+using std::sort;
+
+struct Studentas {
+    string vardas;
+    string pavarde;
+    vector<int> namuDarbai;
+    int egzaminas;
+    double galutinisVid;
+    double galutinisMed;
+};
+
+double apskaiciuotiVidurki(const vector<int>& pazymiai, int egzaminas) {
+    double suma = std::accumulate(pazymiai.begin(), pazymiai.end(), 0.0);
+    double vidurkis = suma / pazymiai.size();
+    return 0.4 * vidurkis + 0.6 * egzaminas;
+}
+
+double apskaiciuotiMediana(vector<int>& pazymiai) {
+    sort(pazymiai.begin(), pazymiai.end());
+    int n = pazymiai.size();
+    if (n % 2 == 0) {
+        return (pazymiai[n / 2 - 1] + pazymiai[n / 2]) / 2.0;
+    } else {
+        return pazymiai[n / 2];
+    }
+}
+
+void ivestiDuomenis(Studentas& studentas) {
+    cout << "Iveskite varda: ";
+    cin >> studentas.vardas;
+    cout << "Iveskite pavarde: ";
+    cin >> studentas.pavarde;
+
+    cout << "Iveskite namu darbu pazymius (baige iveskite 0 ): ";
+    int pazymys;
+    while (cin >> pazymys && pazymys != 0) {
+        studentas.namuDarbai.push_back(pazymys);
+    }
+
+    cout << "Iveskite egzamino rezultata: ";
+    cin >> studentas.egzaminas;
+}
+
+void generuotiDuomenis(Studentas& studentas, int pazymiuKiekis) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(1, 10);
+    studentas.namuDarbai.clear();
+    for (int i = 0; i < pazymiuKiekis; ++i) {
+        studentas.namuDarbai.push_back(dis(gen));
+    }
+    studentas.egzaminas = dis(gen);
+}
+
+void spausdintiDuomenis(const Studentas& studentas, bool naudotiMediana) {
+    cout << left << setw(12) << studentas.vardas
+         << setw(12) << studentas.pavarde;
+    if (naudotiMediana) {
+        cout << fixed << setprecision(2) << "(Med.) " << studentas.galutinisMed << endl;
+    } else {
+        cout << fixed << setprecision(2) << "(Vid.) " << studentas.galutinisVid << endl;
+    }
+}
+
+int main() {
+    vector<Studentas> studentai;
+    int pasirinkimas;
+    int studentuKiekis;
+    string ats;
+    cout << "Iveskite studentu skaiciu: ";
+    cin >> studentuKiekis;
+
+    if (studentuKiekis <= 0) {
+        cout << "Studentu skaicius turi buti teigiamas\n";
+        return 1;
+    }
+
+    do {
+        cout << "Pasirinkite veiksma:\n";
+        cout << "1 - Ivesti duomenis ranka\n";
+        cout << "2 - Generuoti pazymius\n";
+        cout << "3 - Generuoti studentu vardus, pavardes ir pazymius\n";
+        cout << "4 - Baigti darba\n";
+        cin >> pasirinkimas;
+
+        if (pasirinkimas == 1) {
+            for (int i = 0; i < studentuKiekis; ++i) {
+                Studentas studentas;
+                ivestiDuomenis(studentas);
+                studentas.galutinisVid = apskaiciuotiVidurki(studentas.namuDarbai, studentas.egzaminas);
+                studentas.galutinisMed = apskaiciuotiMediana(studentas.namuDarbai);
+                studentai.push_back(studentas);
+            }
+        } else if (pasirinkimas == 2 || pasirinkimas == 3) {
+            int pazymiuKiekis;
+            cout << "Iveskite kiek studentas tures pazymiu: ";
+            while (!(cin >> pazymiuKiekis) || pazymiuKiekis <= 0) {
+                cout << "Neteisingai ivedete skaiciu. Prasome per nauja ivesti skaiciu: ";
+                cin.clear();
+            }
+            for (int i = 0; i < studentuKiekis; ++i) {
+                Studentas studentas;
+                generuotiDuomenis(studentas, pazymiuKiekis);
+                cout << "Pazymiai:\n";
+                for (int i = 0; i < studentas.namuDarbai.size(); ++i) {
+                    cout << "Namu darbas " << i + 1 << ": " << studentas.namuDarbai[i] << endl;
+                }
+                cout << "Egzamino pazymys: " << studentas.egzaminas << endl;
+                studentas.galutinisVid = apskaiciuotiVidurki(studentas.namuDarbai, studentas.egzaminas);
+                studentas.galutinisMed = apskaiciuotiMediana(studentas.namuDarbai);
+                studentai.push_back(studentas);
+            }
+        }
+
+    } while (pasirinkimas != 4);
+
+    bool naudotiMediana;
+    do {
+        cout << "Norite skaiciuoti vidurki ar mediana? Vidurkis- 0, Mediana - 1: ";
+        cin >> naudotiMediana;
+
+        if (naudotiMediana) {
+            ats = "Galutinis(Med.)";
+        } else {
+            ats = "Galutinis(Vid.)";
+        }
+
+    } while (naudotiMediana != 0 && naudotiMediana != 1);
+
+    cout << left << setw(12) << "Vardas" << setw(12) << "Pavardė" << setw(15) << ats << endl;
+    cout << "-------------------------------------------------------" << endl;
+
+    for (const auto& studentas : studentai) {
+        spausdintiDuomenis(studentas, naudotiMediana);
+    }
+
+    return 0;
+}
 
