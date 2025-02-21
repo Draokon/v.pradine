@@ -1,5 +1,5 @@
 # v.pradine
-#v_01
+v_01  
 Programa leidžia:  
 Iš meniu pasirinkti norimą atlikti darbą.   
 Ranka įvesti studento vardą ir pavardę, parašyti jo pažymius ir pasirinkus suskaičiuoti medianą arba vidurkį.  
