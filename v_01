@@ -123,6 +123,7 @@ int main() {
     int pasirinkimas;
     int studentuKiekis;
     string ats;
+
     cout << "Iveskite studentu skaiciu: ";
     cin >> studentuKiekis;
 
@@ -130,8 +131,6 @@ int main() {
         cout << "Studentu skaicius turi buti teigiamas\n";
         return 1;
     }
-
-    do {
         cout << "Pasirinkite veiksma:\n";
         cout << "1 - Ivesti duomenis ranka\n";
         cout << "2 - Generuoti pazymius\n";
@@ -185,11 +184,36 @@ int main() {
 
     } while (pasirinkimas != 0 && pasirinkimas != 1 && pasirinkimas != 2);
 
+    int pasirinkimas1;
+ do {
+    cout << "Ar norite rusiuoti studentus? Taip - 1, Ne - 3: ";
+    cin >> pasirinkimas1;
+
+    if (pasirinkimas1 == 1) {
+        cout << "Pasirinkite kaip norite rusiuoti studentus:\n";
+        cout << "0 - Pagal mediana\n";
+        cout << "1 - Pagal vidurki\n";
+        cin >> pasirinkimas1;
+    } else if (pasirinkimas1 == 3) {
+        break;
+    }
+} while (pasirinkimas1 != 3 && pasirinkimas1 != 1);
+
+      if (pasirinkimas1 == 0) {
+        sort(studentai.begin(), studentai.end(), [](const Studentas& a, const Studentas& b) {
+            return a.galutinisMed < b.galutinisMed;  
+        });
+    } else if (pasirinkimas1 == 1) {
+        sort(studentai.begin(), studentai.end(), [](const Studentas& a, const Studentas& b) {
+            return a.galutinisVid < b.galutinisVid;  
+        });
+    } 
+
     cout << left << setw(12) << "Vardas" << setw(12) << "Pavardė" << setw(15) << ats << endl;
-    cout << "-------------------------------------------------------" << endl;
+    cout << "-----------------------------------------------------------------" << endl;
 
     for (const auto& studentas : studentai) {
-        spausdintiDuomenis(studentas, naudotiMediana);
+        spausdintiDuomenis(studentas, pasirinkimas);
     }
 
     return 0;
