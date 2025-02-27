@@ -171,7 +171,7 @@ int main() {
         nuskaitytiFaila(studentai, failoPavadinimas, studentuKiekis);
     }
     do {
-        cout << "Norite skaiciuoti vidurki, mediana ar abu? Vidurkis - 0, Mediana - 1, Abu - 2: ";
+        cout << "Norite skaiciuoti vidurki, mediana ar abu? Mediana - 0, Vidurkis - 1, Abu - 2: ";
         cin >> pasirinkimas;
 
         if (pasirinkimas == 0) {
@@ -185,25 +185,26 @@ int main() {
     } while (pasirinkimas != 0 && pasirinkimas != 1 && pasirinkimas != 2);
 
     int pasirinkimas1;
+    int pasirinkimas2;
  do {
-    cout << "Ar norite rusiuoti studentus? Taip - 1, Ne - 3: ";
+    cout << "Ar norite rusiuoti studentus? Taip - 1, Ne - 0: ";
     cin >> pasirinkimas1;
 
     if (pasirinkimas1 == 1) {
         cout << "Pasirinkite kaip norite rusiuoti studentus:\n";
         cout << "0 - Pagal mediana\n";
         cout << "1 - Pagal vidurki\n";
-        cin >> pasirinkimas1;
+        cin >> pasirinkimas2;
     } else if (pasirinkimas1 == 3) {
         break;
     }
-} while (pasirinkimas1 != 3 && pasirinkimas1 != 1);
+} while (pasirinkimas1 != 0 && pasirinkimas1 != 1);
 
-      if (pasirinkimas1 == 0) {
+      if (pasirinkimas2 == 0) {
         sort(studentai.begin(), studentai.end(), [](const Studentas& a, const Studentas& b) {
             return a.galutinisMed < b.galutinisMed;  
         });
-    } else if (pasirinkimas1 == 1) {
+    } else if (pasirinkimas2 == 1) {
         sort(studentai.begin(), studentai.end(), [](const Studentas& a, const Studentas& b) {
             return a.galutinisVid < b.galutinisVid;  
         });
