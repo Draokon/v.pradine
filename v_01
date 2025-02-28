@@ -210,7 +210,7 @@ int main() {
         });
     } 
 
-    cout << left << setw(12) << "Vardas" << setw(12) << "Pavardė" << setw(15) << ats << endl;
+    cout << left << setw(15) << "Vardas" << setw(15) << "Pavardė" << setw(15) << ats << endl;
     cout << "-----------------------------------------------------------------" << endl;
 
     for (const auto& studentas : studentai) {
