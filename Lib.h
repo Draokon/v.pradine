@@ -15,6 +15,7 @@
 #include <iterator>
 #include <deque>
 #include <list>
+#include "student.h"
 
 using std::string;
 using std::vector;
@@ -52,15 +53,6 @@ using std::chrono::seconds;
 using std::chrono::duration_cast;
 using std::chrono::system_clock;
 using std::chrono::time_point;
-
-struct Studentas {
-    string vardas;
-    string pavarde;
-    vector<int> namuDarbai;
-    int egzaminas;
-    double galutinisVid;
-    double galutinisMed;
-};
 
 double apskaiciuotiVidurki(const vector<int>& pazymiai, int egzaminas);
 double apskaiciuotiMediana(vector<int>& pazymiai);
