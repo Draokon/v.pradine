@@ -18,7 +18,7 @@ Papildyta:
 - Spartos tyrimas, testavimo sistema su 5 skirtingo dydžio failais
 - Spartos rezultatai.
 
-### 1. Failų generavimas
+### Failų generavimas
 Sugeneruoti failai su atsitiktiniais studentų įrašais (vardai "VardasNR1" ir pan.):
 - 1 000
 - 10 000
@@ -28,7 +28,7 @@ Sugeneruoti failai su atsitiktiniais studentų įrašais (vardai "VardasNR1" ir 
 
 Kiekviename įraše: vardas, pavardė, 7 atsitiktiniai namų darbų pažymiai ir 1 egzamino pažymėjimas.
 
-### 3. Veikimo spartos matavimas
+### Veikimo spartos matavimas
 
 #### Tyrimas 1: Failų kūrimas
  failo atidarymas, įrašymas, uždarymas (be vektorių).
