@@ -1,12 +1,14 @@
+#ifndef STUDENT_H
+#define STUDENT_H
+
 #include <string>
 #include <vector>
 #include <algorithm>
 #include <numeric>
+#include "Zmogus.h"
 
 class Studentas {
 private:
-    std::string vardas_;
-    std::string pavarde_;
     std::vector<int> nd_;
     int egzaminas_;
     double galutinisVid_;
@@ -34,8 +36,6 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Studentas& s);
 
     // Getteriai
-    std::string vardas() const { return vardas_; }
-    std::string pavarde() const { return pavarde_; }
     std::vector<int> nd() const { return nd_; }
     int egzaminas() const { return egzaminas_; }
     double galutinisVid() const { return galutinisVid_; }
@@ -43,8 +43,6 @@ public:
     double galutinis() const { return galutinis_; }
 
     // Setteriai
-    void setVardas(const std::string& v) { vardas_ = v; }
-    void setPavarde(const std::string& p) { pavarde_ = p; }
     void setNd(const std::vector<int>& n) { nd_ = n; }
     void setEgzaminas(int e) { egzaminas_ = e; }
 
@@ -55,6 +53,10 @@ public:
     void pridetiNd(int n) { nd_.push_back(n); }
 
     bool operator<(const Studentas& other) const { return galutinis_ < other.galutinis_; }
+    // Privalomas abstraktaus metodo realizavimas
+    void info() const override {
+        std::cout << "Studentas: " << vardas_ << " " << pavarde_ << std::endl;
+    }
 };
 
 #endif
