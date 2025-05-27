@@ -1,12 +1,13 @@
-#ifndef STUDENT_H
-#define STUDENT_H
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <numeric>
 
-#include "Lib.h"
 class Studentas {
 private:
-    string vardas_;
-    string pavarde_;
-    vector<int> nd_;
+    std::string vardas_;
+    std::string pavarde_;
+    std::vector<int> nd_;
     int egzaminas_;
     double galutinisVid_;
     double galutinisMed_;
@@ -15,7 +16,7 @@ private:
 public:
     // Konstruktoriai
     Studentas();
-    Studentas(const string& vard, const string& pav, const vector<int>& nd, int egz);
+    Studentas(const std::string& vard, const std::string& pav, const std::vector<int>& nd, int egz);
 
     // Kopijavimo konstruktorius ir operatorius
     Studentas(const Studentas& other);
@@ -25,18 +26,18 @@ public:
     ~Studentas();
 
     // Getteriai
-    string vardas() const { return vardas_; }
-    string pavarde() const { return pavarde_; }
-    vector<int> nd() const { return nd_; }
+    std::string vardas() const { return vardas_; }
+    std::string pavarde() const { return pavarde_; }
+    std::vector<int> nd() const { return nd_; }
     int egzaminas() const { return egzaminas_; }
     double galutinisVid() const { return galutinisVid_; }
     double galutinisMed() const { return galutinisMed_; }
     double galutinis() const { return galutinis_; }
 
     // Setteriai
-    void setVardas(const string& v) { vardas_ = v; }
-    void setPavarde(const string& p) { pavarde_ = p; }
-    void setNd(const vector<int>& n) { nd_ = n; }
+    void setVardas(const std::string& v) { vardas_ = v; }
+    void setPavarde(const std::string& p) { pavarde_ = p; }
+    void setNd(const std::vector<int>& n) { nd_ = n; }
     void setEgzaminas(int e) { egzaminas_ = e; }
 
     // Kiti metodai
@@ -48,4 +49,4 @@ public:
     bool operator<(const Studentas& other) const { return galutinis_ < other.galutinis_; }
 };
 
-#endif 
+#endif
