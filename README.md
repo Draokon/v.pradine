@@ -7,10 +7,10 @@ Pasirinkti kiek pažymių studentas turės ir juos automatiškai sugeneruoti.
 Pasirinkus „Baigti darbą" lentelės pavidalu parodo ranka įvestus arba sugeneruotus duomenis.  
 
 
-**v1_0**
-Papildyta:
--Nuskaitymas i STL konteinerius (`vector`, `list`, `deque`). 
--Laiko matavimo rezultatai
+**v1_0**  
+Papildyta:  
+-Nuskaitymas i STL konteinerius (`vector`, `list`, `deque`).   
+-Laiko matavimo rezultatai  
 
 
 
