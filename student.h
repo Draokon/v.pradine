@@ -19,11 +19,19 @@ public:
     Studentas(const std::string& vard, const std::string& pav, const std::vector<int>& nd, int egz);
 
     // Kopijavimo konstruktorius ir operatorius
-    Studentas(const Studentas& other);
-    Studentas& operator=(const Studentas& other);
+    Studentas(const Studentas& other);                  //Rule of five copy constructor
+    Studentas& operator=(const Studentas& other);       // Rule of five copy assignment operator
+    Studentas(Studentas&& other) noexcept;              // Rule of five move constructor
+    Studentas& operator=(Studentas&& other) noexcept;   // Rule of five move assignment operator  
 
     // Destruktorius
     ~Studentas();
+
+    // Įvesties operatorius (iš srauto)
+    friend std::istream& operator>>(std::istream& is, Studentas& s);
+
+    // Išvesties operatorius (į srautą)
+    friend std::ostream& operator<<(std::ostream& os, const Studentas& s);
 
     // Getteriai
     std::string vardas() const { return vardas_; }
