@@ -154,4 +154,4 @@ for (int n : dydziai) {
     return 0;
 }
 
-//g++ mainUtils.cpp Filegen.cpp Fileproc.cpp -o mainutils
+//g++ FailuGenmain.cpp Filegen.cpp Fileproc.cpp -o main
