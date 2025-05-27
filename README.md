@@ -58,10 +58,11 @@ Pilnas matavimas nuo pradžios iki pabaigos (failo nuskaitymas + skirstymas + i�
 | 100 000       | 0.727 s       | 0.397s      | 0.054s      | 0.194s    | 0.647s   |
 | 1 000 000     | 1.577 s       | 5.413s      | 0.565s      | 5.559s    | 11.578s  |
 | 10 000 000    | 42.82 s       | 69.542s     | 16.800s     | 50.933s   | 139.947s |
+![image](https://github.com/user-attachments/assets/79db6307-4666-4f87-ad72-5964da429213)
 
 
-## • Paleidimas
-//g++ FailuGenmain.cpp Lib.cpp Fileproc.cpp Filegen.cpp -o main 
-//main.exe
+#Paleidimas
+-->g++ FailuGenmain.cpp Lib.cpp Fileproc.cpp Filegen.cpp -o main 
+-->main.exe
 ---
 
