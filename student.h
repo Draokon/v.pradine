@@ -1,11 +1,13 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-#include "Lib.h"
+#include <vector>
+#include <string>
+
 struct Studentas {
-    string vardas;
-    string pavarde;
-    vector<int> nd;
+    std::string vardas;
+    std::string pavarde;
+    std::vector<int> nd;
     int egzaminas;
     double galutinisVid;
     double galutinisMed;
