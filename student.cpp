@@ -1,25 +1,23 @@
 #include "Lib.h"
 
 Studentas::Studentas()
-    : vardas_(""), pavarde_(""), nd_(), egzaminas_(0), galutinisVid_(0), galutinisMed_(0), galutinis_(0) {}
+    : Zmogus(), nd_{}, egzaminas_{0}, galutinisVid_{0}, galutinisMed_{0}, galutinis_{0} {}
 
 Studentas::Studentas(const std::string& vard, const std::string& pav, const std::vector<int>& nd, int egz)
-    : vardas_(vard), pavarde_(pav), nd_(nd), egzaminas_(egz), galutinisVid_(0), galutinisMed_(0), galutinis_(0)
+    : Zmogus(vard, pav), nd_(nd), egzaminas_(egz), galutinisVid_(0), galutinisMed_(0), galutinis_(0)
 {
     skaiciuoti_vidurki_ir_mediana();
     skaiciuoti_galutini();
 }
 
-//copy constructor 
+// Copy zmogus.h
 Studentas::Studentas(const Studentas& other)
-    : vardas_(other.vardas_), pavarde_(other.pavarde_), nd_(other.nd_), egzaminas_(other.egzaminas_),
-      galutinisVid_(other.galutinisVid_), galutinisMed_(other.galutinisMed_), galutinis_(other.galutinis_) {}
-
-//copy assignment operator
+    : Zmogus(other), nd_(other.nd_), egzaminas_(other.egzaminas_),
+    galutinisVid_(other.galutinisVid_), galutinisMed_(other.galutinisMed_), galutinis_(other.galutinis_) {}
+//copy operator zmogus.h
 Studentas& Studentas::operator=(const Studentas& other) {
     if (this != &other) {
-        vardas_ = other.vardas_;
-        pavarde_ = other.pavarde_;
+        Zmogus::operator=(other);
         nd_ = other.nd_;
         egzaminas_ = other.egzaminas_;
         galutinisVid_ = other.galutinisVid_;
@@ -28,27 +26,24 @@ Studentas& Studentas::operator=(const Studentas& other) {
     }
     return *this;
 }
-//move constructor
+// Move
 Studentas::Studentas(Studentas&& other) noexcept
-    : vardas_(std::move(other.vardas_)), pavarde_(std::move(other.pavarde_)), nd_(std::move(other.nd_)),
-      egzaminas_(other.egzaminas_), galutinisVid_(other.galutinisVid_), galutinisMed_(other.galutinisMed_),
-      galutinis_(other.galutinis_) { //perkelia duoemnis is kitu obj, nepalikdami kopiju
-    other.egzaminas_ = 0; // Nustatome kitam objektui egzaminą į 0
-    other.galutinisVid_ = other.galutinisMed_ = other.galutinis_ = 0; // Nustatome kitam objektui galutinius į 0
+    : Zmogus(std::move(other)), nd_(std::move(other.nd_)), egzaminas_(other.egzaminas_),
+      galutinisVid_(other.galutinisVid_), galutinisMed_(other.galutinisMed_), galutinis_(other.galutinis_) {
+    other.egzaminas_ = 0;
+    other.galutinisVid_ = other.galutinisMed_ = other.galutinis_ = 0;
 }
-//move assignment operator
+//move operator zmogus.h
 Studentas& Studentas::operator=(Studentas&& other) noexcept {
     if (this != &other) {
-        vardas_ = std::move(other.vardas_);
-        pavarde_ = std::move(other.pavarde_);
+        Zmogus::operator=(std::move(other));
         nd_ = std::move(other.nd_);
         egzaminas_ = other.egzaminas_;
         galutinisVid_ = other.galutinisVid_;
         galutinisMed_ = other.galutinisMed_;
         galutinis_ = other.galutinis_;
-        
-        other.egzaminas_ = 0; // Nustatome kitam objektui egzaminą į 0
-        other.galutinisVid_ = other.galutinisMed_ = other.galutinis_ = 0; // Nustatome kitam objektui galutinius į 0
+        other.egzaminas_ = 0;
+        other.galutinisVid_ = other.galutinisMed_ = other.galutinis_ = 0;
     }
     return *this;
 }
