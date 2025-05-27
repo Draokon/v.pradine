@@ -10,3 +10,9 @@ Pasirinkus „Baigti darbą" lentelės pavidalu parodo ranka įvestus arba sugen
 Papildyta:  
 -Rule of 5 ir I/O operatoriai  
 -veikimas patikrinamas test_student.cpp  
+
+**v1_5**  
+Papildyta:  
+-Žmogus klasė  
+-Rule of five ir I/O operatoriai pakeisti, kad atittiktų zmogus.h abstrakcia klase   
+-patikrinamas veikimas test_zmogus.cpp
