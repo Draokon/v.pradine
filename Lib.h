@@ -13,11 +13,14 @@
 #include <chrono>
 #include <iomanip>
 
+
 using std::string;
 using std::vector;
 using std::ifstream;
 using std::stringstream;
 using std::accumulate;
+using std::invalid_argument;
+using std::runtime_error;
 using std::sort;
 using std::setw;
 using std::left;
