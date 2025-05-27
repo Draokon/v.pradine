@@ -10,6 +10,74 @@ Studentas::Studentas(const std::string& vard, const std::string& pav, const std:
     skaiciuoti_galutini();
 }
 
+//copy constructor 
+Studentas::Studentas(const Studentas& other)
+    : vardas_(other.vardas_), pavarde_(other.pavarde_), nd_(other.nd_), egzaminas_(other.egzaminas_),
+      galutinisVid_(other.galutinisVid_), galutinisMed_(other.galutinisMed_), galutinis_(other.galutinis_) {}
+
+//copy assignment operator
+Studentas& Studentas::operator=(const Studentas& other) {
+    if (this != &other) {
+        vardas_ = other.vardas_;
+        pavarde_ = other.pavarde_;
+        nd_ = other.nd_;
+        egzaminas_ = other.egzaminas_;
+        galutinisVid_ = other.galutinisVid_;
+        galutinisMed_ = other.galutinisMed_;
+        galutinis_ = other.galutinis_;
+    }
+    return *this;
+}
+//move constructor
+Studentas::Studentas(Studentas&& other) noexcept
+    : vardas_(std::move(other.vardas_)), pavarde_(std::move(other.pavarde_)), nd_(std::move(other.nd_)),
+      egzaminas_(other.egzaminas_), galutinisVid_(other.galutinisVid_), galutinisMed_(other.galutinisMed_),
+      galutinis_(other.galutinis_) { //perkelia duoemnis is kitu obj, nepalikdami kopiju
+    other.egzaminas_ = 0; // Nustatome kitam objektui egzaminą į 0
+    other.galutinisVid_ = other.galutinisMed_ = other.galutinis_ = 0; // Nustatome kitam objektui galutinius į 0
+}
+//move assignment operator
+Studentas& Studentas::operator=(Studentas&& other) noexcept {
+    if (this != &other) {
+        vardas_ = std::move(other.vardas_);
+        pavarde_ = std::move(other.pavarde_);
+        nd_ = std::move(other.nd_);
+        egzaminas_ = other.egzaminas_;
+        galutinisVid_ = other.galutinisVid_;
+        galutinisMed_ = other.galutinisMed_;
+        galutinis_ = other.galutinis_;
+        
+        other.egzaminas_ = 0; // Nustatome kitam objektui egzaminą į 0
+        other.galutinisVid_ = other.galutinisMed_ = other.galutinis_ = 0; // Nustatome kitam objektui galutinius į 0
+    }
+    return *this;
+}
+ 
+// Destruktorius
+Studentas::~Studentas() {
+    // Nėra dinaminės atminties, jei butu tai reiketu atlaisvint
+}
+
+//ivesties operatorius
+istream& operator>>(istream& in, Studentas& s) {
+    in >> s.vardas_ >> s.pavarde_;
+    s.nd_.clear();
+    int pazymys;
+    while (in >> pazymys && pazymys != 0) {
+        s.nd_.push_back(pazymys);
+    }
+    in >> s.egzaminas_; // egzaminas po 0
+    s.skaiciuoti_galutini();
+    return in;
+}
+
+//isvesties operatorius
+ostream& operator<<(ostream& out, const Studentas& s) {
+    out << s.vardas_ << " " << s.pavarde_ << " ";
+    out << fixed << setprecision(2) << s.galutinisVid() << " " << s.galutinisMed() << " " << s.galutinis();
+    return out;
+}
+
 Studentas::Studentas(const Studentas& other)
     : vardas_(other.vardas_), pavarde_(other.pavarde_), nd_(other.nd_), egzaminas_(other.egzaminas_),
       galutinisVid_(other.galutinisVid_), galutinisMed_(other.galutinisMed_), galutinis_(other.galutinis_) {}
