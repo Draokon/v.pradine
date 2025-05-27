@@ -12,12 +12,19 @@
 #include <random>
 #include <chrono>
 #include <iomanip>
+#include <iterator>
+#include <deque>
+#include <list>
 
 using std::string;
 using std::vector;
+using std::list;
+using std::deque;
 using std::ifstream;
 using std::stringstream;
 using std::accumulate;
+using std::runtime_error;
+using std::invalid_argument;
 using std::sort;
 using std::setw;
 using std::left;
