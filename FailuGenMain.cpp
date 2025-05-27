@@ -9,31 +9,32 @@ int main() {
     int pazymiuKiekis = 5;
 
     // 1 tyrimas: failu kurimas
-    for (int n : dydziai) {
-        Timer t;
-        generuotiFaila("studentai_" + to_string(n) + ".txt", n, pazymiuKiekis);
-        cout << "Sugeneruota " << n << " irasu per " << t.elapsed() << " s.\n";
-    }
+for (int n : dydziai) {
+    TimerPoint t_start = start_timer();
+    generuotiFaila("studentai_" + std::to_string(n) + ".txt", n, pazymiuKiekis);
+    std::cout << "Sugeneruota " << n << " irasu per " << elapsed_time(t_start) << " s.\n";
+}
 
-    // 2 tyrimas: apdorojimas
-    for (int n : dydziai) {
-        vector<Studentas> visi, vargsai, galvociai;
-        Timer total;
 
-        Timer t1;
-        nuskaitytiFaila("studentai_" + to_string(n) + ".txt", visi);
-        cout << "[Nuskaitymas " << n << "] " << t1.elapsed() << " s.\n";
+ // 2 tyrimas: apdorojimas
+for (int n : dydziai) {
+    std::vector<Studentas> visi, vargsai, galvociai;
+    TimerPoint total_start = start_timer();
 
-        Timer t2;
-        padalintiStudentus(visi, vargsai, galvociai);
-        cout << "[Rusiavimas " << n << "] " << t2.elapsed() << " s.\n";
+    TimerPoint t1_start = start_timer();
+    nuskaitytiFaila("studentai_" + std::to_string(n) + ".txt", visi);
+    std::cout << "[Nuskaitymas " << n << "] " << elapsed_time(t1_start) << " s.\n";
 
-        Timer t3;
-        isvestiIFailus(vargsai, galvociai, "rezultatai_" + to_string(n));
-        cout << "[Isvedimas " << n << "] " << t3.elapsed() << " s.\n";
+    TimerPoint t2_start = start_timer();
+    padalintiStudentus(visi, vargsai, galvociai);
+    std::cout << "[Rusiavimas " << n << "] " << elapsed_time(t2_start) << " s.\n";
 
-        cout << "[Viso " << n << "] " << total.elapsed() << " s.\n\n";
-    }
+    TimerPoint t3_start = start_timer();
+    isvestiIFailus(vargsai, galvociai, "rezultatai_" + std::to_string(n));
+    std::cout << "[Isvedimas " << n << "] " << elapsed_time(t3_start) << " s.\n";
+
+    std::cout << "[Viso " << n << "] " << elapsed_time(total_start) << " s.\n\n";
+}
 
     return 0;
 }
