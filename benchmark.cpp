@@ -1,6 +1,6 @@
 // src/Benchmark.cpp
 #include "Benchmark.h"
-#include "Student.h"
+#include "Lib.h"
 #include "FileUtils.h"
 #include "sorting.h"
 #include "Timer.h"
