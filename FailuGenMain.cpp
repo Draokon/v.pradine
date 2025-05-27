@@ -1,10 +1,7 @@
-
-#include "student.h"
 #include "utils.h"
 #include "Timer.h"
 #include "Filegen.h"
 #include "Fileproc.h"
-#include "Lib.h"
 
 void benchmark(const string& failas, ContainerType tipas, size_t kiekis) {
     cout << "---- " << (tipas==VECTOR?"VECTOR":tipas==LIST?"LIST":"DEQUE") << " ----\n";
@@ -105,43 +102,42 @@ void benchmark(const string& failas, ContainerType tipas, size_t kiekis) {
         cout << left << setw(25) << "Skirstymas3 (s): " << skirst3 << endl;
     }
 }
+
 int main() {
     vector<int> dydziai = {1000, 10000, 100000, 1000000, 10000000};
     int pazymiuKiekis = 5;
 
-for (int n : dydziai) {
-    TimerPoint t_start = start_timer();
-    generuotiFaila("studentai_" + to_string(n) + ".txt", n, pazymiuKiekis);
-    cout << "Sugeneruota " << n << " irasu per " << elapsed_time(t_start) << " s.\n";
-}
-
+    for (int n : dydziai) {
+        TimerPoint t_start = start_timer();
+        generuotiFaila("studentai_" + to_string(n) + ".txt", n, pazymiuKiekis);
+        cout << "Sugeneruota " << n << " irasu per " << elapsed_time(t_start) << " s.\n";
+    }
 
     // 2 tyrimas: apdorojimas
-for (int n : dydziai) {
-    vector<Studentas> visi, vargsai, galvociai;
-    TimerPoint total_start = start_timer();
+    for (int n : dydziai) {
+        vector<Studentas> visi, vargsai, galvociai;
+        TimerPoint total_start = start_timer();
 
-    TimerPoint t1_start = start_timer();
-    nuskaitytiFaila("studentai_" + to_string(n) + ".txt", visi);
-    cout << "[Nuskaitymas " << n << "] " << elapsed_time(t1_start) << " s.\n";
+        TimerPoint t1_start = start_timer();
+        nuskaitytiFaila("studentai_" + to_string(n) + ".txt", visi);
+        cout << "[Nuskaitymas " << n << "] " << elapsed_time(t1_start) << " s.\n";
 
-    TimerPoint t2_start = start_timer();
-    padalintiStudentus(visi, vargsai, galvociai);
-    cout << "[Rusiavimas " << n << "] " << elapsed_time(t2_start) << " s.\n";
+        TimerPoint t2_start = start_timer();
+        padalintiStudentus(visi, vargsai, galvociai);
+        cout << "[Rusiavimas " << n << "] " << elapsed_time(t2_start) << " s.\n";
 
-    TimerPoint t3_start = start_timer();
-    isvestiIFailus(vargsai, galvociai, "rezultatai_" + to_string(n));
-    cout << "[Isvedimas " << n << "] " << elapsed_time(t3_start) << " s.\n";
+        TimerPoint t3_start = start_timer();
+        isvestiIFailus(vargsai, galvociai, "rezultatai_" + to_string(n));
+        cout << "[Isvedimas " << n << "] " << elapsed_time(t3_start) << " s.\n";
 
-    cout << "[Viso " << n << "] " << elapsed_time(total_start) << " s.\n\n";
-}
+        cout << "[Viso " << n << "] " << elapsed_time(total_start) << " s.\n\n";
+    }
 
     vector<string> failai = {
         "studentai_1000.txt",
         "studentai_10000.txt",
         "studentai_100000.txt",
         "studentai_1000000.txt"
-        "students_10000000.txt" 
     };
 
     for (const auto& f : failai) {
@@ -154,4 +150,14 @@ for (int n : dydziai) {
     return 0;
 }
 
-//g++ FailuGenmain.cpp Filegen.cpp Fileproc.cpp -o main
+/*
+g++ -O1 main.cpp student.cpp Filegen.cpp Fileproc.cpp Lib.cpp -o programa_O1
+g++ -O2 main.cpp student.cpp Filegen.cpp Fileproc.cpp Lib.cpp -o programa_O2
+g++ -O3 main.cpp student.cpp Filegen.cpp Fileproc.cpp Lib.cpp -o programa_O3
+*/
+
+/*
+programa_O1.exe
+programa_O2.exe
+programa_O3.exe
+*/
