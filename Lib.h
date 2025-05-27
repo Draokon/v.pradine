@@ -12,12 +12,20 @@
 #include <random>
 #include <chrono>
 #include <iomanip>
+#include <iterator>
+#include <deque>
+#include <list>
+#include "student.h"
 
 using std::string;
 using std::vector;
+using std::list;
+using std::deque;
 using std::ifstream;
 using std::stringstream;
 using std::accumulate;
+using std::runtime_error;
+using std::invalid_argument;
 using std::sort;
 using std::setw;
 using std::left;
@@ -45,15 +53,6 @@ using std::chrono::seconds;
 using std::chrono::duration_cast;
 using std::chrono::system_clock;
 using std::chrono::time_point;
-
-struct Studentas {
-    string vardas;
-    string pavarde;
-    vector<int> namuDarbai;
-    int egzaminas;
-    double galutinisVid;
-    double galutinisMed;
-};
 
 double apskaiciuotiVidurki(const vector<int>& pazymiai, int egzaminas);
 double apskaiciuotiMediana(vector<int>& pazymiai);
