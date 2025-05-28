@@ -1,0 +1,149 @@
+\doxysection{Lib.\+h File Reference}
+\hypertarget{_lib_8h}{}\label{_lib_8h}\index{Lib.h@{Lib.h}}
+
+
+Bendroji biblioteka ir funkcijos darbui su \doxylink{class_studentas}{Studentas} duomenimis ir pagalbiniai apibrėžimai.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include "{}student.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_lib_8h_acf623abcae8b9e5a4b9f0e7aba088d16}{nuskaityti\+Faila}} (const string \&pav, vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai)
+\begin{DoxyCompactList}\small\item\em Nuskaito studentų duomenis iš failo į vektorių \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_lib_8h_ad7a9d91783f84af0411517d038f93413}{padalinti\+Studentus}} (const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&vargs, vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&kiet)
+\begin{DoxyCompactList}\small\item\em Padalina studentus į dvi grupes pagal glautini pažymį \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_lib_8h_afd01c05e8aab81860ebf2296ebabe6da}{isvesti\+IFailus}} (const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&vargs, const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&kiet, const string \&pav\+Pre)
+\begin{DoxyCompactList}\small\item\em Išveda studentų duomenis į failus (vargsiukai ir kietekai) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_lib_8h_a3f47970a27fdd5438062c206b671ddaf}{ivesti\+Duomenis}} (\mbox{\hyperlink{class_studentas}{Studentas}} \&studentas)
+\begin{DoxyCompactList}\small\item\em Įveda studento duomenis iš standartinio įvesties srauto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_lib_8h_ac326a40a28e0a14051b616d732723a7b}{generuoti\+Duomenis}} (\mbox{\hyperlink{class_studentas}{Studentas}} \&studentas, int pazymiu\+Kiekis)
+\begin{DoxyCompactList}\small\item\em Generuoja studento duomenis su atsitiktiniais pažymiais. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_lib_8h_a196823a99ee1a93d82a9e97263a2ad1b}{spausdinti\+Duomenis}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&studentas, int pasirinkimas)
+\begin{DoxyCompactList}\small\item\em Išveda studento duomenis į standartinį išvesties srautą \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bendroji biblioteka ir funkcijos darbui su \doxylink{class_studentas}{Studentas} duomenimis ir pagalbiniai apibrėžimai. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{_lib_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_lib_8h_ac326a40a28e0a14051b616d732723a7b}\index{Lib.h@{Lib.h}!generuotiDuomenis@{generuotiDuomenis}}
+\index{generuotiDuomenis@{generuotiDuomenis}!Lib.h@{Lib.h}}
+\doxysubsubsection{\texorpdfstring{generuotiDuomenis()}{generuotiDuomenis()}}
+{\footnotesize\ttfamily \label{_lib_8h_ac326a40a28e0a14051b616d732723a7b} 
+void generuoti\+Duomenis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_studentas}{Studentas}} \&}]{studentas}{, }\item[{int}]{pazymiu\+Kiekis}{}\end{DoxyParamCaption})}
+
+
+
+Generuoja studento duomenis su atsitiktiniais pažymiais. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentas} & \doxylink{class_studentas}{Studentas} objektas, kuriam bus priskirti duomenys \\
+\hline
+{\em pazymiu\+Kiekis} & Kiek pažymių generuoti (namų darbų) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_lib_8h_afd01c05e8aab81860ebf2296ebabe6da}\index{Lib.h@{Lib.h}!isvestiIFailus@{isvestiIFailus}}
+\index{isvestiIFailus@{isvestiIFailus}!Lib.h@{Lib.h}}
+\doxysubsubsection{\texorpdfstring{isvestiIFailus()}{isvestiIFailus()}}
+{\footnotesize\ttfamily \label{_lib_8h_afd01c05e8aab81860ebf2296ebabe6da} 
+void isvesti\+IFailus (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{vargs}{, }\item[{const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{kiet}{, }\item[{const string \&}]{pav\+Pre}{}\end{DoxyParamCaption})}
+
+
+
+Išveda studentų duomenis į failus (vargsiukai ir kietekai) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vargs} & Vektorius su vargšų studentų duomenimis \\
+\hline
+{\em kiet} & Vektorius su kietų studentų duomenimis \\
+\hline
+{\em pav\+Pre} & Pagrindinis failo pavadinimas (be priedų) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_lib_8h_a3f47970a27fdd5438062c206b671ddaf}\index{Lib.h@{Lib.h}!ivestiDuomenis@{ivestiDuomenis}}
+\index{ivestiDuomenis@{ivestiDuomenis}!Lib.h@{Lib.h}}
+\doxysubsubsection{\texorpdfstring{ivestiDuomenis()}{ivestiDuomenis()}}
+{\footnotesize\ttfamily \label{_lib_8h_a3f47970a27fdd5438062c206b671ddaf} 
+void ivesti\+Duomenis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_studentas}{Studentas}} \&}]{studentas}{}\end{DoxyParamCaption})}
+
+
+
+Įveda studento duomenis iš standartinio įvesties srauto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentas} & \doxylink{class_studentas}{Studentas} objektas, kuriam bus priskirti duomenys \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_lib_8h_acf623abcae8b9e5a4b9f0e7aba088d16}\index{Lib.h@{Lib.h}!nuskaitytiFaila@{nuskaitytiFaila}}
+\index{nuskaitytiFaila@{nuskaitytiFaila}!Lib.h@{Lib.h}}
+\doxysubsubsection{\texorpdfstring{nuskaitytiFaila()}{nuskaitytiFaila()}}
+{\footnotesize\ttfamily \label{_lib_8h_acf623abcae8b9e5a4b9f0e7aba088d16} 
+void nuskaityti\+Faila (\begin{DoxyParamCaption}\item[{const string \&}]{pav}{, }\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaito studentų duomenis iš failo į vektorių 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pav} & Failo pavadinimas \\
+\hline
+{\em studentai} & Vektorius, į kurį bus įrašyti duomenys \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_lib_8h_ad7a9d91783f84af0411517d038f93413}\index{Lib.h@{Lib.h}!padalintiStudentus@{padalintiStudentus}}
+\index{padalintiStudentus@{padalintiStudentus}!Lib.h@{Lib.h}}
+\doxysubsubsection{\texorpdfstring{padalintiStudentus()}{padalintiStudentus()}}
+{\footnotesize\ttfamily \label{_lib_8h_ad7a9d91783f84af0411517d038f93413} 
+void padalinti\+Studentus (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{vargs}{, }\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{kiet}{}\end{DoxyParamCaption})}
+
+
+
+Padalina studentus į dvi grupes pagal glautini pažymį 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vektorius su visais studentais \\
+\hline
+{\em vargs} & Vektorius, kuriame bus vargšų studentų duomenys \\
+\hline
+{\em kiet} & Vektorius, kuriame bus kietų studentų duomenys \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_lib_8h_a196823a99ee1a93d82a9e97263a2ad1b}\index{Lib.h@{Lib.h}!spausdintiDuomenis@{spausdintiDuomenis}}
+\index{spausdintiDuomenis@{spausdintiDuomenis}!Lib.h@{Lib.h}}
+\doxysubsubsection{\texorpdfstring{spausdintiDuomenis()}{spausdintiDuomenis()}}
+{\footnotesize\ttfamily \label{_lib_8h_a196823a99ee1a93d82a9e97263a2ad1b} 
+void spausdinti\+Duomenis (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{studentas}{, }\item[{int}]{pasirinkimas}{}\end{DoxyParamCaption})}
+
+
+
+Išveda studento duomenis į standartinį išvesties srautą 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentas} & \doxylink{class_studentas}{Studentas} objektas, kurio duomenys bus išvedami \\
+\hline
+{\em pasirinkimas} & 0 -\/ tik galutinis pažymys pagal medianą, 1 -\/ tik pagal vidurkį, 2 -\/ abu \\
+\hline
+\end{DoxyParams}

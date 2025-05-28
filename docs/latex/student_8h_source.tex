@@ -1,0 +1,84 @@
+\doxysection{student.\+h}
+\hypertarget{student_8h_source}{}\label{student_8h_source}\mbox{\hyperlink{student_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ STUDENT\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ STUDENT\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zmogus_8h}{Zmogus.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}\ :\textcolor{keyword}{public}\ \mbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//std::string\ vardas\_;}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//std::string\ pavarde\_;}}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<int>\ nd\_;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ egzaminas\_;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{double}\ galutinisVid\_;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ galutinisMed\_;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{double}\ galutinis\_;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Konstruktoriai}}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}(\textcolor{keyword}{const}\ std::string\&\ vard,\ \textcolor{keyword}{const}\ std::string\&\ pav,\ \textcolor{keyword}{const}\ std::vector<int>\&\ \mbox{\hyperlink{class_studentas_adfecda15db6a1074b4224cbf6f9a1b8d}{nd}},\ \textcolor{keywordtype}{int}\ egz);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Kopijavimo\ konstruktorius\ ir\ operatorius}}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}\&\ other);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Rule\ of\ five\ copy\ constructor}}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}\&\ \mbox{\hyperlink{class_studentas_a25bcc531503d3bc490dab4a656e3b8e9}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}\&\ other);\ \ \ \ \ \ \ \textcolor{comment}{//\ Rule\ of\ five\ copy\ assignment\ operator}}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}(\mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}\&\&\ other)\ \textcolor{keyword}{noexcept};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rule\ of\ five\ move\ constructor}}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}\&\ \mbox{\hyperlink{class_studentas_a25bcc531503d3bc490dab4a656e3b8e9}{operator=}}(\mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}\&\&\ other)\ \textcolor{keyword}{noexcept};\ \ \ \textcolor{comment}{//\ Rule\ of\ five\ move\ assignment\ operator\ \ }}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{//\ Destruktorius}}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{class_studentas_a63e449e0f51a0b14340d02ee71b4be23}{\string~Studentas}}();}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\ Įvesties\ operatorius\ (i\ srautą)}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\&\ \mbox{\hyperlink{class_studentas_ac63003b577b137ac6ad5b1fb176bd59a}{operator>>}}(std::istream\&\ is,\ \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}\&\ s);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ Išvesties\ operatorius\ (iš\ srauto)}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class_studentas_a4062cbd3f4c44fac2063e38cfa00a8cf}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}\&\ s);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{//\ Getteriai}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ \ \ \ std::string\ vardas()\ const\ \{\ return\ vardas\_;\ \}}}
+\DoxyCodeLine{00118\ \textcolor{comment}{\ \ \ \ std::string\ pavarde()\ const\ \{\ return\ pavarde\_;\ \}}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\ \ \ \ std::vector<int>\ nd()\ const\ \{\ return\ nd\_;\ \}}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\ \ \ \ int\ egzaminas()\ const\ \{\ return\ egzaminas\_;\ \}}}
+\DoxyCodeLine{00121\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_studentas_adfecda15db6a1074b4224cbf6f9a1b8d}{nd}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ nd\_;\ \}\ \textcolor{comment}{//zmogus.h}}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_studentas_a8ec75244e6c21cf5a6af9f6d02f20fa2}{egzaminas}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ egzaminas\_;\ \}\textcolor{comment}{//zmogus.h}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_studentas_a49a2519eb2a57b8c0b572cf414ccc3fc}{galutinisVid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinisVid\_;\ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_studentas_ab9dcc63a1ad95f1f34db3e5a96449720}{galutinisMed}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinisMed\_;\ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_studentas_a448772adf518582b94ac0ac39e224a16}{galutinis}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinis\_;\ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{comment}{//\ Setteriai}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ \ \ \ void\ setVardas(const\ std::string\&\ v)\ \{\ vardas\_\ =\ v;\ \}}}
+\DoxyCodeLine{00157\ \textcolor{comment}{\ \ \ \ void\ setPavarde(const\ std::string\&\ p)\ \{\ pavarde\_\ =\ p;\ \}}}
+\DoxyCodeLine{00158\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_studentas_adf274570ff72a9b03e33771c64d285e3}{setNd}}(\textcolor{keyword}{const}\ std::vector<int>\&\ n)\ \{\ nd\_\ =\ n;\ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_studentas_a659d6bb3cfd109fe095a9a03eaea2667}{setEgzaminas}}(\textcolor{keywordtype}{int}\ e)\ \{\ egzaminas\_\ =\ e;\ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{comment}{//\ Kiti\ metodai}}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_studentas_a1e35924d338fc4877a6011ccd5c149b1}{skaiciuoti\_vidurki\_ir\_mediana}}();}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_studentas_a96a801b56af63eb8fbdb356069a5c395}{skaiciuoti\_galutini}}();}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_studentas_a373907caaa67bf5fcb70cbd70c516d1a}{isvalytiNd}}()\ \{\ nd\_.clear();\ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_studentas_ae912fe3d60996ac0c1e39f67b0384bf0}{pridetiNd}}(\textcolor{keywordtype}{int}\ n)\ \{\ nd\_.push\_back(n);\ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_studentas_a5fdd664ecf8537e01dedf6296d32fb76}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}}\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ galutinis\_\ <\ other.galutinis\_;\ \}}
+\DoxyCodeLine{00201\ \ \ \ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{comment}{//\ Privalomas\ abstraktaus\ metodo\ realizavimas}}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_studentas_afd2ce5774c97b01b2fe40fd47567e653}{info}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Studentas:\ "{}}\ <<\ \mbox{\hyperlink{class_zmogus_a80e72cd553492344884a264a72ce33d2}{vardas\_}}\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{class_zmogus_a85cd6103a5f887059263d15413a3f081}{pavarde\_}}\ <<\ std::endl;}
+\DoxyCodeLine{00209\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ STUDENT\_H}}
+
+\end{DoxyCode}

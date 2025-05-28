@@ -1,0 +1,23 @@
+\doxysection{Timer.\+h}
+\hypertarget{_timer_8h_source}{}\label{_timer_8h_source}\mbox{\hyperlink{_timer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ TIMER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ TIMER\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_lib_8h}{Lib.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ }\mbox{\hyperlink{_timer_8h_ada278de4eca722d3fcfa51aced97cea5}{TimerPoint}}\ =\ high\_resolution\_clock::time\_point;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{_timer_8h_ada278de4eca722d3fcfa51aced97cea5}{TimerPoint}}\ \mbox{\hyperlink{_timer_8h_a9aa6d292a33f77a345465cd7e516c9a0}{start\_timer}}()\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ high\_resolution\_clock::now();}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_timer_8h_add3ae696ee90506a693e7dbd423685f6}{elapsed\_time}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_timer_8h_ada278de4eca722d3fcfa51aced97cea5}{TimerPoint}}\&\ start)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ duration<double>(high\_resolution\_clock::now()\ -\/\ start).count();}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

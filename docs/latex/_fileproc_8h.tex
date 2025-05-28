@@ -1,0 +1,82 @@
+\doxysection{Fileproc.\+h File Reference}
+\hypertarget{_fileproc_8h}{}\label{_fileproc_8h}\index{Fileproc.h@{Fileproc.h}}
+
+
+Funkcijų prototipai darbui su failais ir studentų duomenų apdorojimu.  
+
+
+{\ttfamily \#include "{}Lib.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_fileproc_8h_acf623abcae8b9e5a4b9f0e7aba088d16}{nuskaityti\+Faila}} (const string \&pav, vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai)
+\begin{DoxyCompactList}\small\item\em Nuskaito studentų duomenis iš failo į vektorių \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_fileproc_8h_ad7a9d91783f84af0411517d038f93413}{padalinti\+Studentus}} (const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&vargs, vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&kiet)
+\begin{DoxyCompactList}\small\item\em Padalina studentus į dvi grupes pagal galutinį pažymį \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_fileproc_8h_afd01c05e8aab81860ebf2296ebabe6da}{isvesti\+IFailus}} (const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&vargs, const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&kiet, const string \&pav\+Pre)
+\begin{DoxyCompactList}\small\item\em Išveda vargšų ir kietų studentų duomenis į atskirus failus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funkcijų prototipai darbui su failais ir studentų duomenų apdorojimu. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{_fileproc_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_fileproc_8h_afd01c05e8aab81860ebf2296ebabe6da}\index{Fileproc.h@{Fileproc.h}!isvestiIFailus@{isvestiIFailus}}
+\index{isvestiIFailus@{isvestiIFailus}!Fileproc.h@{Fileproc.h}}
+\doxysubsubsection{\texorpdfstring{isvestiIFailus()}{isvestiIFailus()}}
+{\footnotesize\ttfamily \label{_fileproc_8h_afd01c05e8aab81860ebf2296ebabe6da} 
+void isvesti\+IFailus (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{vargs}{, }\item[{const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{kiet}{, }\item[{const string \&}]{pav\+Pre}{}\end{DoxyParamCaption})}
+
+
+
+Išveda vargšų ir kietų studentų duomenis į atskirus failus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vargs} & Vektorius su vargšų studentų duomenimis \\
+\hline
+{\em kiet} & Vektorius su kietų studentų duomenimis \\
+\hline
+{\em pav\+Pre} & Failo pavadinimo prefiksas, prie kurio bus pridėti "{}\+\_\+vargsiukai"{} ir "{}\+\_\+kietekai"{} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_fileproc_8h_acf623abcae8b9e5a4b9f0e7aba088d16}\index{Fileproc.h@{Fileproc.h}!nuskaitytiFaila@{nuskaitytiFaila}}
+\index{nuskaitytiFaila@{nuskaitytiFaila}!Fileproc.h@{Fileproc.h}}
+\doxysubsubsection{\texorpdfstring{nuskaitytiFaila()}{nuskaitytiFaila()}}
+{\footnotesize\ttfamily \label{_fileproc_8h_acf623abcae8b9e5a4b9f0e7aba088d16} 
+void nuskaityti\+Faila (\begin{DoxyParamCaption}\item[{const string \&}]{pav}{, }\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaito studentų duomenis iš failo į vektorių 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pav} & Failo pavadinimas \\
+\hline
+{\em studentai} & Vektorius, į kurį bus įrašyti studentų duomenys \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_fileproc_8h_ad7a9d91783f84af0411517d038f93413}\index{Fileproc.h@{Fileproc.h}!padalintiStudentus@{padalintiStudentus}}
+\index{padalintiStudentus@{padalintiStudentus}!Fileproc.h@{Fileproc.h}}
+\doxysubsubsection{\texorpdfstring{padalintiStudentus()}{padalintiStudentus()}}
+{\footnotesize\ttfamily \label{_fileproc_8h_ad7a9d91783f84af0411517d038f93413} 
+void padalinti\+Studentus (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{vargs}{, }\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{kiet}{}\end{DoxyParamCaption})}
+
+
+
+Padalina studentus į dvi grupes pagal galutinį pažymį 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vektorius su visais studentais \\
+\hline
+{\em vargs} & Vektorius, kuriame bus vargšų studentų duomenys \\
+\hline
+{\em kiet} & Vektorius, kuriame bus kietų studentų duomenys \\
+\hline
+\end{DoxyParams}

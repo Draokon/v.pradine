@@ -1,0 +1,193 @@
+\doxysection{utils.\+h File Reference}
+\hypertarget{utils_8h}{}\label{utils_8h}\index{utils.h@{utils.h}}
+
+
+pagalbinėsfunkcijos skirtos studentų duomenų apdorojimui  
+
+
+{\ttfamily \#include "{}Lib.\+h"{}}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{utils_8h_a82a2d0604ce62fef1c6393fc7e99b086}\label{utils_8h_a82a2d0604ce62fef1c6393fc7e99b086} 
+enum \mbox{\hyperlink{utils_8h_a82a2d0604ce62fef1c6393fc7e99b086}{Container\+Type}} \{ {\bfseries VECTOR}
+, {\bfseries LIST}
+, {\bfseries DEQUE}
+ \}
+\begin{DoxyCompactList}\small\item\em konteinerio tipų enumeracija (VECTOR, LIST, DEQUE) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{utils_8h_a819dee177ce2a0a41ba8ef8e94afc666}{skaityti}} (const std\+::string \&filename, Container \&students)
+\begin{DoxyCompactList}\small\item\em Skaito studentų duomenis iš failo į nurodytą konteinerį. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{utils_8h_aefa37eff529a8516416b03c2adb1025f}{rusiavimas}} (Container \&students)
+\begin{DoxyCompactList}\small\item\em rūšiuoja studentus pagal galutinį pažymį. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{utils_8h_a02ffe59e692f02401fb9c614e2a81c4a}{rusiavimas}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&students)
+\begin{DoxyCompactList}\small\item\em Rūšiuoja studentų sąrašą pagal galutinį pažymį \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{utils_8h_a8d4408a1cd8571a46e879385326aadb8}{skirstymas1}} (const Container \&students, Container \&vargs, Container \&kiet)
+\begin{DoxyCompactList}\small\item\em Skirsto studentus į dvi grupes\+: vargšus ir kietus. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{utils_8h_ab855993dd25d1a401f0cad9a2b4061a3}{skirstymas2}} (Container \&students, Container \&vargs)
+\begin{DoxyCompactList}\small\item\em Skirsto studentus\+: vargšiukai kopijuojami į naują, trinami iš bendro konteinerio. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Container$>$ }\\void \mbox{\hyperlink{utils_8h_a593f50b3770703df530ca80e686ac00e}{skirstymas3}} (Container \&students, Container \&vargs)
+\begin{DoxyCompactList}\small\item\em Skirsto studentus naudojant STL partition/remove\+\_\+if. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{utils_8h_a9e18e069f06213db8985819f1a9742cb}{skirstymas3}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&students, list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&vargs)
+\begin{DoxyCompactList}\small\item\em Skirsto studentų sąrašą naudojant remove\+\_\+if (specializacija list) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+pagalbinėsfunkcijos skirtos studentų duomenų apdorojimui 
+
+
+
+\label{doc-func-members}
+\Hypertarget{utils_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8h_aefa37eff529a8516416b03c2adb1025f}\index{utils.h@{utils.h}!rusiavimas@{rusiavimas}}
+\index{rusiavimas@{rusiavimas}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{rusiavimas()}{rusiavimas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{utils_8h_aefa37eff529a8516416b03c2adb1025f} 
+template$<$typename Container$>$ \\
+void rusiavimas (\begin{DoxyParamCaption}\item[{Container \&}]{students}{}\end{DoxyParamCaption})}
+
+
+
+rūšiuoja studentus pagal galutinį pažymį. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Container} & STL, turintis begin() ir end() \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em students} & studentų konteineris \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8h_a02ffe59e692f02401fb9c614e2a81c4a}\index{utils.h@{utils.h}!rusiavimas@{rusiavimas}}
+\index{rusiavimas@{rusiavimas}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{rusiavimas()}{rusiavimas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{utils_8h_a02ffe59e692f02401fb9c614e2a81c4a} 
+template$<$$>$ \\
+void rusiavimas (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{students}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rūšiuoja studentų sąrašą pagal galutinį pažymį 
+
+
+\begin{DoxyParams}{Parameters}
+{\em students} & Studentų sąrašas (list). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8h_a819dee177ce2a0a41ba8ef8e94afc666}\index{utils.h@{utils.h}!skaityti@{skaityti}}
+\index{skaityti@{skaityti}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{skaityti()}{skaityti()}}
+{\footnotesize\ttfamily \label{utils_8h_a819dee177ce2a0a41ba8ef8e94afc666} 
+template$<$typename Container$>$ \\
+void skaityti (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{Container \&}]{students}{}\end{DoxyParamCaption})}
+
+
+
+Skaito studentų duomenis iš failo į nurodytą konteinerį. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Container} & STL suderinamas konteineris \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Failo pavadinimas, iš kurio bus skaitomi studentų duomenys. \\
+\hline
+{\em students} & Konteineris, į kurį bus rašomi studentų duomenys. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8h_a8d4408a1cd8571a46e879385326aadb8}\index{utils.h@{utils.h}!skirstymas1@{skirstymas1}}
+\index{skirstymas1@{skirstymas1}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{skirstymas1()}{skirstymas1()}}
+{\footnotesize\ttfamily \label{utils_8h_a8d4408a1cd8571a46e879385326aadb8} 
+template$<$typename Container$>$ \\
+void skirstymas1 (\begin{DoxyParamCaption}\item[{const Container \&}]{students}{, }\item[{Container \&}]{vargs}{, }\item[{Container \&}]{kiet}{}\end{DoxyParamCaption})}
+
+
+
+Skirsto studentus į dvi grupes\+: vargšus ir kietus. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Container} & STL suderinamas konteineris \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em students} & Originalus studentų konteineris. \\
+\hline
+{\em vargs} & Vargšų studentų konteineris, kuriame bus saugomi studentai su galutiniu pažymiu mažesniu nei 5.\+0. \\
+\hline
+{\em kiet} & Kietų studentų konteineris, kuriame bus saugomi studentai su galutiniu pažymiu 5.\+0 ar didesniu. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8h_ab855993dd25d1a401f0cad9a2b4061a3}\index{utils.h@{utils.h}!skirstymas2@{skirstymas2}}
+\index{skirstymas2@{skirstymas2}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{skirstymas2()}{skirstymas2()}}
+{\footnotesize\ttfamily \label{utils_8h_ab855993dd25d1a401f0cad9a2b4061a3} 
+template$<$typename Container$>$ \\
+void skirstymas2 (\begin{DoxyParamCaption}\item[{Container \&}]{students}{, }\item[{Container \&}]{vargs}{}\end{DoxyParamCaption})}
+
+
+
+Skirsto studentus\+: vargšiukai kopijuojami į naują, trinami iš bendro konteinerio. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Container} & STL suderinamas konteineris \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em students} & Pradinis studentų konteineris (bus iš jo trinami) \\
+\hline
+{\em vargs} & Konteineris, kuriame bus studentai su galutinis \texorpdfstring{$<$}{<} 5 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8h_a593f50b3770703df530ca80e686ac00e}\index{utils.h@{utils.h}!skirstymas3@{skirstymas3}}
+\index{skirstymas3@{skirstymas3}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{skirstymas3()}{skirstymas3()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{utils_8h_a593f50b3770703df530ca80e686ac00e} 
+template$<$typename Container$>$ \\
+void skirstymas3 (\begin{DoxyParamCaption}\item[{Container \&}]{students}{, }\item[{Container \&}]{vargs}{}\end{DoxyParamCaption})}
+
+
+
+Skirsto studentus naudojant STL partition/remove\+\_\+if. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Container} & STL suderinamas konteineris \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em students} & Pradinis studentų konteineris (bus iš jo trinami) \\
+\hline
+{\em vargs} & Konteineris, kuriame bus studentai su galutinis \texorpdfstring{$<$}{<} 5 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8h_a9e18e069f06213db8985819f1a9742cb}\index{utils.h@{utils.h}!skirstymas3@{skirstymas3}}
+\index{skirstymas3@{skirstymas3}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{skirstymas3()}{skirstymas3()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{utils_8h_a9e18e069f06213db8985819f1a9742cb} 
+template$<$$>$ \\
+void skirstymas3 (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{students}{, }\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{vargs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Skirsto studentų sąrašą naudojant remove\+\_\+if (specializacija list) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em students} & Studentų sąrašas (list), iš kurio bus trinami \\
+\hline
+{\em vargs} & Sąrašas, į kurį bus kopijuojami studentai su galutinis \texorpdfstring{$<$}{<} 5 \\
+\hline
+\end{DoxyParams}
