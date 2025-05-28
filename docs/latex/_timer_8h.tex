@@ -1,0 +1,59 @@
+\doxysection{Timer.\+h File Reference}
+\hypertarget{_timer_8h}{}\label{_timer_8h}\index{Timer.h@{Timer.h}}
+
+
+Pagalbinės funkcijos laiko matavimui (aukštos raiškos laikrodis)  
+
+
+{\ttfamily \#include "{}Lib.\+h"{}}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_timer_8h_ada278de4eca722d3fcfa51aced97cea5}\label{_timer_8h_ada278de4eca722d3fcfa51aced97cea5} 
+using {\bfseries Timer\+Point} = high\+\_\+resolution\+\_\+clock\+::time\+\_\+point
+\begin{DoxyCompactList}\small\item\em Aukštos raiškos laikrodžio laiko taškas (pradžiai ar pabaigai žymėti) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_timer_8h_ada278de4eca722d3fcfa51aced97cea5}{Timer\+Point}} \mbox{\hyperlink{_timer_8h_a9aa6d292a33f77a345465cd7e516c9a0}{start\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em Gražina dabartinį laiką \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_timer_8h_add3ae696ee90506a693e7dbd423685f6}{elapsed\+\_\+time}} (const \mbox{\hyperlink{_timer_8h_ada278de4eca722d3fcfa51aced97cea5}{Timer\+Point}} \&start)
+\begin{DoxyCompactList}\small\item\em Apskaičiuoja praėjusį laiką sekundėmis nuo pradžios taško. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Pagalbinės funkcijos laiko matavimui (aukštos raiškos laikrodis) 
+
+
+
+\label{doc-func-members}
+\Hypertarget{_timer_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_timer_8h_add3ae696ee90506a693e7dbd423685f6}\index{Timer.h@{Timer.h}!elapsed\_time@{elapsed\_time}}
+\index{elapsed\_time@{elapsed\_time}!Timer.h@{Timer.h}}
+\doxysubsubsection{\texorpdfstring{elapsed\_time()}{elapsed\_time()}}
+{\footnotesize\ttfamily \label{_timer_8h_add3ae696ee90506a693e7dbd423685f6} 
+double elapsed\+\_\+time (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_timer_8h_ada278de4eca722d3fcfa51aced97cea5}{Timer\+Point}} \&}]{start}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apskaičiuoja praėjusį laiką sekundėmis nuo pradžios taško. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Pradžios laiko taškas \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_timer_8h_a9aa6d292a33f77a345465cd7e516c9a0}\index{Timer.h@{Timer.h}!start\_timer@{start\_timer}}
+\index{start\_timer@{start\_timer}!Timer.h@{Timer.h}}
+\doxysubsubsection{\texorpdfstring{start\_timer()}{start\_timer()}}
+{\footnotesize\ttfamily \label{_timer_8h_a9aa6d292a33f77a345465cd7e516c9a0} 
+\mbox{\hyperlink{_timer_8h_ada278de4eca722d3fcfa51aced97cea5}{Timer\+Point}} start\+\_\+timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gražina dabartinį laiką 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{_timer_8h_ada278de4eca722d3fcfa51aced97cea5}{Timer\+Point} -\/ laiko žymė 
+\end{DoxyReturn}
